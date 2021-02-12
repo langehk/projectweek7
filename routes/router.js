@@ -7,10 +7,8 @@ const handlers = require("../private/handlers");               // handlers modul
 const requestHandlers = {                             // application urls here
     GET: {
         "/": handlers.home,
-        "/start": handlers.home,
-        "/side": handlers.home,
-        "/about": handlers.home,
-        "/contact": handlers.home,
+        "/book" : handlers.home,
+        "/author" : handlers.home,
         "/notfound": handlers.notfound,
         "js": handlers.js,
         "css": handlers.css,
