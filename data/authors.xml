@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="booksCanon.xsl"?>
+<authors>
+    <author>
+        <firstname>Ian</firstname>
+        <lastname>Lloyd</lastname>
+    </author>
+    <author>
+        <firstname>Rich</firstname>
+        <lastname>Shupe</lastname>
+    </author>
+    <author>
+        <firstname>Zevan</firstname>
+        <lastname>Rosser</lastname>
+    </author>
+    <author>
+        <firstname>Robin</firstname>
+        <lastname>Nixon</lastname>
+    </author>
+    <author>
+        <firstname>Ben</firstname>
+        <lastname>Forta</lastname>
+    </author>
+</authors>
