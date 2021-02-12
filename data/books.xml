@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<?xml-stylesheet type="text/xsl" href="booksCanon.xsl"?>
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
 <books>
   <book ref="Llo08" mycanon="mdu,all">
     <title>Learn How to Build Web Sites the Right Way from Scratch</title>
