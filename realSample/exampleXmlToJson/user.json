@@ -1,0 +1,81 @@
+{
+    "books": {
+        "book": [
+            {
+                "ref": "Llo08",
+                "mycanon": "mdu,all",
+                "title": "Learn How to Build Web Sites the Right Way from Scratch",
+                "edition": "2",
+                "publisher": {
+                    "name": "SitePoint",
+                    "year": "2008",
+                    "place": "Collingwood, VIC, Australia"
+                },
+                "pages": "470",
+                "isbn": "978-0980455274",
+                "price": "17.97",
+                "currency": "US$",
+                "comments": {
+                    "comment": "1. sem: Chapters 1-7"
+                }
+            },
+            {
+                "ref": "Shu08",
+                "mycanon": "mdu",
+                "title": "Learning ActionScript 3.0",
+                "edition": "2",
+                "publisher": {
+                    "name": "O'Reilly",
+                    "year": "2008",
+                    "place": "Sebastopol, CA, USA"
+                },
+                "pages": "384",
+                "isbn": "978-0596527877",
+                "price": "8.73",
+                "currency": "US$",
+                "comments": {
+                    "comment": "1. sem: Chapters 1-7"
+                }
+            },
+            {
+                "ref": "Nix09",
+                "mycanon": "mdu",
+                "title": "Learning PHP, MySQL, and JavaScript",
+                "edition": "2",
+                "publisher": {
+                    "name": "O'Reilly",
+                    "year": "2009",
+                    "place": "Sebastopol, CA, USA"
+                },
+                "pages": "528",
+                "isbn": "978-0596157135",
+                "price": "23.99",
+                "currency": "US$",
+                "comments": {
+                    "comment": [
+                        "2. sem: Chapters 1-7, 11, 14-17",
+                        "3. sem: Chapters 8-10"
+                    ]
+                }
+            },
+            {
+                "ref": "For04",
+                "mycanon": "mdu",
+                "title": "SQL in 10 Minutes",
+                "edition": "3",
+                "publisher": {
+                    "name": "Sams Publishing",
+                    "year": "2004",
+                    "place": "Indianapolis, IN, USA"
+                },
+                "pages": "256",
+                "isbn": "978-0672325670",
+                "price": "14.97",
+                "currency": "EU€",
+                "comments": {
+                    "comment": "3. sem: Chapters 1-17"
+                }
+            }
+        ]
+    }
+}
