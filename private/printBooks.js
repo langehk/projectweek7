@@ -13,11 +13,17 @@ let html = `<!doctype html>
     <title>Contact list</title>
 </head>
 <body> 
-<table id="booksTable">
+<table id="booksTable" border="1">
 <tr>
 <th>Title</th>
 <th>Edition</th>
 <th>Authors</th>
+<th>Publisher</th>
+<th>Pages</th>
+<th>Isbn</th>
+<th>Price</th>
+<th>Currency</th>
+<th>Comments</th>
 </tr>`;
 
 exports.printBooks = function(res) {
@@ -46,11 +52,13 @@ exports.printBooks = function(res) {
 
             for (let i = 0; i < content.booksCanon.book.length; i++) {
                 
-                let book = content.booksCanon.book[i];
+                let book = content.booksCanon.book[i]; 
+
 
                 let newRow = `<tr><td>${book.title}</td>
                     <td>${book.edition}</td>`;
 
+                // Henter author / authors 
                 if (book.authors.author.length > 1){
                     newRow += '<td>';
                     for (let y = 0; y < book.authors.author.length; y++) {
@@ -62,7 +70,27 @@ exports.printBooks = function(res) {
                 else {
                     newRow += (`<td>${book.authors.author.firstname} ${book.authors.author.lastname}</td>`);
                 }
+
+                newRow += (`<td>${book.publisher.name} ${book.publisher.year} <br> ${book.publisher.place}</td>`);
+                newRow += (`<td>${book.pages}`);
+                newRow += (`<td>${book.isbn}`);
+                newRow += (`<td>${book.price}`);
+                newRow += (`<td>${book.currency}`);
+
+                if(book.comments.comment.length > 1){
+                    newRow += '<td>';
+                    for (let y = 0; y < book.comments.comment.length; y++) {
+                        newRow += (`${book.comments.comment[y]}`);
+                        
+                    }
+                    newRow += '</td>';
+                }
+                else {
+                    newRow += (`<td>${book.comments.comment[y]}</td>`);
+                }
                 
+                                
+
                 newRow += '</tr>';
                 html += newRow; 
                 
