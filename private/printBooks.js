@@ -5,6 +5,7 @@ const filename = "./data/books.xml";
 const xml2js = require("xml2js");
 const httpStatus = require("http-status-codes");        // http sc
 
+let p; 
 let html = `<!doctype html> 
 <html>
 <head>
@@ -16,7 +17,8 @@ let html = `<!doctype html>
 <tr>
 <th>Title</th>
 <th>Edition</th>
-<th>Authors</th>`; 
+<th>Authors</th>
+</tr>`;
 
 exports.printBooks = function(res) {
 
@@ -44,15 +46,28 @@ exports.printBooks = function(res) {
 
             for (let i = 0; i < content.booksCanon.book.length; i++) {
                 
-                let author = content.booksCanon.book;
+                let book = content.booksCanon.book[i];
 
-                let newRow = `<tr><td>${content.booksCanon.book[i].title}</td>
-                    <td>${content.booksCanon.book[i].edition}</td>
-                    <td>${content.booksCanon.book[i].authors.author.firstname} ${content.booksCanon.book[i].authors.author.lastname}</td></tr>`;
+                let newRow = `<tr><td>${book.title}</td>
+                    <td>${book.edition}</td>`;
+
+                if (book.authors.author.length > 1){
+                    newRow += '<td>';
+                    for (let y = 0; y < book.authors.author.length; y++) {
+                        newRow += (`${book.authors.author[y].firstname} ${book.authors.author[y].lastname} <br>`);
+                        
+                    }
+                    newRow += '</td>';
+                }
+                else {
+                    newRow += (`<td>${book.authors.author.firstname} ${book.authors.author.lastname}</td>`);
+                }
+                
+                newRow += '</tr>';
                 html += newRow; 
                 
             }
-            
+                   
             html += `</body> </html>`; 
             res.write(html);
             res.end(); 
