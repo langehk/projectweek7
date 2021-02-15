@@ -12,7 +12,7 @@ module.exports = {
         const server = http.createServer();
 
         server.on("request", function (req, res) {      // eventhandler for "request"
-            console.log(lib.makeLogEntry(req));         // home made utility for logging
+            
             let body = [];
             req.on("data", function (bodyData) {        // eventhandling for data reception
                 body.push(bodyData);                    // bodyData is an object

@@ -1,6 +1,9 @@
 /* libWebUtil.js Service Module */
 "use strict";
+
 const querystring = require("querystring"); // file system access
+const fs = require("fs");
+const xml2js = require('xml2js');
 
 const getJSONString = function (obj) {      // prettyprint obj
     return JSON.stringify(obj, null, 4);
@@ -19,19 +22,54 @@ exports.makeWebArrays = function (req, data) {
     return { GET, POST };
 }
 
-exports.makeLogEntry = function(req) {
-    let now = new Date();
-    let s = "";
-    let month = now.getMonth() < 10 ? "0" + now.getMonth() : "" + now.getMonth();
-    let date = now.getDate() < 10 ? "0" + now.getDate() : "" + now.getDate();
-    let hours = now.getHours() < 10 ? "0" + now.getHours() : "" + now.getHours();
-    let mins = now.getMinutes() < 10 ? "0" + now.getMinutes() : "" + now.getMinutes();
-    let secs = now.getSeconds() < 10 ? "0" + now.getSeconds() : "" + now.getSeconds();
 
-    s += `${now.getFullYear()}-${month}-${date}`;
-    s += "T";
-    s += `${hours}:${mins}:${secs}`;
-    s += " ";
-    s += `${req.method} ${req.url}`;
-    return s;
+/* Skal kunne tage i mod en xml fil, og lave om til JSON
+* Kan vi bruge til at indlæse data, udelukkende.
+*/
+exports.convertXmlToJson = function(file) {
+
+    fs.readFile(file, "utf-8", (err, data) => {
+        if (err) {
+            throw err;
+        }
+    xml2js.parseString(data, { mergeAttrs: true, explicitArray: false }, (err, result) => {
+        if (err) {
+            throw err;
+        }
+       console.log(JSON.stringify(result, null, 4)); 
+        });
+    });
+}
+
+
+/*  Skal kunne tage i mod et JSON object, og gemme til en eksisterende XML fil
+*   Kan vi bruge til at gemme med....
+*/
+exports.saveJsonObjectToXml = function(jsonObj, destFile) {
+   
+    // read XML file
+    fs.readFile(destFile, "utf-8", (err, data) => {
+        if (err) {
+            throw err;
+        }
+
+   // convert XML data to JSON object
+   xml2js.parseString(data, { mergeAttrs: true, explicitArray: false }, (err, result) => {
+    if (err) {
+        throw err;
+    }
+
+    result.databases.database.push(jsonObj); // HEr pusher vi data ind i vores XML. 
+    result.databases.database[1].name = "PostgreSQL."; // Her kan vi opdatere en attribute.
+
+    const builder = new xml2js.Builder();
+    const xml = builder.buildObject(result);
+
+    fs.writeFile(destFile, xml, (err) => {
+        if (err) {
+            throw err;
+        }
+    });
+    });
+});
 }

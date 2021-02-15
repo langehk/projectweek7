@@ -5,8 +5,9 @@
  */
 const fs = require("fs");                               // file system access
 const httpStatus = require("http-status-codes");        // http sc
-const lib = require("../private/libWebUtil");           // home grown utilities
-const experimental = require("../private/myTemplater"); // highly experimental template
+//const lib = require("../private/libWebUtil");           // home grown utilities
+//const experimental = require("../private/myTemplater"); // highly experimental template
+const print = require("../private/printBooks"); 
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
 const getAndServe = async function (res, path, content) {   // asynchronous
@@ -59,13 +60,8 @@ module.exports = {
         console.log(`Handler 'notfound' was called for route ${req.url}`);
         res.end();
     },
-
-    receiveData(req, res, data) {
-        let obj = lib.makeWebArrays(req, data);         // home made GET and POST objects
-        res.writeHead(httpStatus.OK, {                  // yes, write relevant header
-            "Content-Type": "text/html; charset=utf-8"
-        });
-        res.write(experimental.receipt(obj));           // home made templating for native node
-        res.end();
+    books(res) {
+        print.printBooks(res);
     }
+
 }
