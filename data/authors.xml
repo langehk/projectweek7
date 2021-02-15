@@ -1,28 +1,32 @@
-<?xml version="1.0" standalone="no"?>
-
-<?xml-stylesheet type="text/xsl" href="authors.xsl"?>
-<authors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:noNamespaceSchemaLocation="authors.xsd">
-    <author>
-        <name>Ian Lloyd</name>
-        <birthyear>1995</birthyear>
-        <deathyear>2020</deathyear>
-        <birthplace>London</birthplace>
-        <contry>England</contry>
-        <language>en</language>
-        <bio>Han var en god forfatter</bio>
-        
-    </author>
-
-    <author>
-        <name>John Smith</name>
-        <birthyear>1990</birthyear>
-        <deathyear></deathyear>
-        <birthplace>New York</birthplace>
-        <contry>USA</contry>
-        <language>en</language>
-        <bio>Han er en god forfatter</bio>
-        
-    </author>
-    
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<authors>
+  <xmlns:xsi>http://www.w3.org/2001/XMLSchema-instance</xmlns:xsi>
+  <xsi:noNamespaceSchemaLocation>authors.xsd</xsi:noNamespaceSchemaLocation>
+  <author>
+    <name>Ian Lloyd</name>
+    <birthyear>1995</birthyear>
+    <deathyear>2020</deathyear>
+    <birthplace>London</birthplace>
+    <country>England</country>
+    <language>en</language>
+    <bio>Han var en god forfatter</bio>
+  </author>
+  <author>
+    <name>John Smith</name>
+    <birthyear>1990</birthyear>
+    <deathyear/>
+    <birthplace>New York</birthplace>
+    <country>USA</country>
+    <language>en</language>
+    <bio>Han er en god forfatter</bio>
+  </author>
+  <author>
+    <name>Abdi</name>
+    <birthyear>1111</birthyear>
+    <deathyear>123123</deathyear>
+    <birthplace>qweqwe</birthplace>
+    <country>qweqwe</country>
+    <language>wqewqe</language>
+    <bio>21wqe</bio>
+  </author>
 </authors>

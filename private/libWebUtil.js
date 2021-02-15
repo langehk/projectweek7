@@ -75,15 +75,11 @@ exports.saveJsonObjectToXml = function(jsonObj, destFile) {
 }
 
 exports.createBook = function(object) {
-
-    
-
     // read XML file
     fs.readFile("./data/books.xml", "utf-8", (err, data) => {
         if (err) {
             throw err;
         }
-
 // Bygger book object, som vi har udfyldt i vores FORM. til et JSON object.
 const Book = {
     ref : object.POST.ref,
@@ -125,6 +121,45 @@ const Book = {
 
         // write updated XML string to a file
         fs.writeFile('./data/books.xml', xml, (err) => {
+            if (err) {
+                throw err;
+            }
+        });
+    });
+});
+}
+
+exports.createAuthor = function(object) {
+    // read XML file
+    fs.readFile("./data/authors.xml", "utf-8", (err, data) => {
+        if (err) {
+            throw err;
+        }
+
+const Author = {
+    name : object.POST.name,
+    birthyear : object.POST.birthyear,
+    deathyear : object.POST.deathyear,
+    birthplace : object.POST.birthplace,
+    country : object.POST.country,
+    language : object.POST.language,
+    bio : object.POST.bio
+}
+
+    // convert XML data to JSON object
+       xml2js.parseString(data, { mergeAttrs: true, explicitArray: false }, (err, result) => {
+        if (err) {
+            throw err;
+        }
+        result.authors.author.push(Author);
+        console.log(JSON.stringify(result, null, 4));
+
+        // convert SJON objec to XML
+        const builder = new xml2js.Builder();
+        const xml = builder.buildObject(result);
+
+        // write updated XML string to a file
+        fs.writeFile('./data/authors.xml', xml, (err) => {
             if (err) {
                 throw err;
             }

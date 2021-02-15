@@ -18,8 +18,8 @@ const requestHandlers = {                             // application urls here
         "ico": handlers.ico
     },
     POST: {
-        "/addBook": handlers.receiveData,
-        "/addAuthor": handlers.receiveData
+        "/addBook": handlers.POSTBook,
+        "/addAuthor": handlers.POSTAuthor,
     }
 }
 

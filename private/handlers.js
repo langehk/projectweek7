@@ -78,10 +78,26 @@ module.exports = {
         res.writeHead(httpStatus.OK, {                  // yes, write relevant header
             "Content-Type": "text/html; charset=utf-8"
         });
-        console.log("post data:");
-        //console.log(obj.POST);
+        res.write(receipt.receipt(obj));           // home made templating for native node
+        res.end();
+    },
+    POSTBook(req, res, data) {
+        let obj = lib.makeWebArrays(req, data);
+        res.writeHead(httpStatus.OK, {                  // yes, write relevant header
+            "Content-Type": "text/html; charset=utf-8"
+        });
         lib.createBook(obj);
         res.write(receipt.receipt(obj));           // home made templating for native node
         res.end();
-    }
+    },
+    POSTAuthor(req, res, data) {
+        let obj = lib.makeWebArrays(req, data);
+        res.writeHead(httpStatus.OK, {                  // yes, write relevant header
+            "Content-Type": "text/html; charset=utf-8"
+        });
+        lib.createAuthor(obj);
+        res.write(receipt.receipt(obj));           // home made templating for native node
+        res.end();
+    },
+
 }
