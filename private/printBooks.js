@@ -13,6 +13,7 @@ let html = `<!doctype html>
     <title>Contact list</title>
 </head>
 <body> 
+<h1>List of books: </h1>
 <table id="booksTable" border="1">
 <tr>
 <th>Title</th>
