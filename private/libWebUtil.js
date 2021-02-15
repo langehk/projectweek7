@@ -97,6 +97,7 @@ const Book = {
         place : object.POST.publisherPlace,
     }],
     pages : object.POST.pages,
+    isbn : object.POST.isbn,
     price : object.POST.price,
     currenct : object.POST.currency,
     comments : [{

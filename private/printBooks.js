@@ -21,6 +21,7 @@ let html = `<!doctype html>
       </ul>
       <ul>
             <li><a href="/addBook">Create Book</a></li>
+            <li><a href="/deleteBook">Delete Book</a></li>
       </ul>
 </nav>
 <table id="booksTable" border="1">
@@ -98,7 +99,6 @@ exports.printBooks = function(res) {
                     newRow += (`<td>${book.comments.comment[y]}</td>`);
                 }
                 
-                newRow += (`<td><input type="button" id="${book.isbn}" value="Delete Row" onclick=""></td>`);
 
                 newRow += '</tr>';
                 html += newRow; 
