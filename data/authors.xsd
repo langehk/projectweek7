@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <xs:complexType name="authorList">
+        <xs:sequence>
+            <xs:element name="author" type="myAuthors" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="myAuthors">
+        <xs:sequence>
+            <xs:element name="firstname" type="xs:string" />
+            <xs:element name="lastname" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="authors" type="authorList" />
+</xs:schema>

@@ -1,20 +1,17 @@
 <?xml version="1.0" standalone="no"?>
-
-<?xml-stylesheet type="text/xsl" href="authors.xsl"?>
+<!DOCTYPE schema [
+<!ENTITY euro "&#8364;">
+]>
 <booksCanon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:noNamespaceSchemaLocation="books.xsd">
+    xsi:noNamespaceSchemaLocation="books.xsd">
   <book ref="Llo08" mycanon="mdu,all">
     <title>Learn How to Build Web Sites the Right Way from Scratch</title>
     <edition>2</edition>
     <authors>
       <author>
-        <firstname>Lars</firstname>
-        <lastname>Jensen</lastname>
-      </author>
-      <author>
-        <firstname>Børge</firstname>
-        <lastname>Andersen</lastname>
-      </author>
+        <firstname>Ian</firstname>
+        <lastname>Lloyd</lastname>
+        </author>
     </authors>
     <publisher>
       <name>SitePoint</name>
@@ -35,8 +32,12 @@ xsi:noNamespaceSchemaLocation="books.xsd">
     <edition>2</edition>
     <authors>
       <author>
-        <firstname>Niels</firstname>
-        <lastname>Pedersen</lastname>
+        <firstname>Rich</firstname>
+        <lastname>Shupe</lastname>
+      </author>
+      <author>
+        <firstname>Zevan</firstname>
+        <lastname>Rosser</lastname>
       </author>
     </authors>
     <publisher>
@@ -58,8 +59,8 @@ xsi:noNamespaceSchemaLocation="books.xsd">
     <edition>2</edition>
     <authors>
       <author>
-        <firstname>John</firstname>
-        <lastname>Smith</lastname>
+        <firstname>Robin</firstname>
+        <lastname>Nixon</lastname>
       </author>
     </authors>
     <publisher>
@@ -82,8 +83,8 @@ xsi:noNamespaceSchemaLocation="books.xsd">
     <edition>3</edition>
     <authors>
       <author>
-        <firstname>Alex</firstname>
-        <lastname>Hansen</lastname>
+        <firstname>Ben</firstname>
+        <lastname>Forta</lastname>
       </author>
     </authors>
     <publisher>
@@ -94,7 +95,7 @@ xsi:noNamespaceSchemaLocation="books.xsd">
     <pages>256</pages>
     <isbn>978-0672325670</isbn>
     <price>14.97</price>
-    <currency>&#8364;</currency>
+    <currency>EU&#8364;</currency>
     <comments>
       <comment>3. sem: Chapters 1-17</comment>
     </comments>

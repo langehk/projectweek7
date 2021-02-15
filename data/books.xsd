@@ -1,0 +1,74 @@
+<?xml version="1.0" standalone="yes"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:appinfo>
+            Just testing
+        </xs:appinfo>   
+        <xs:documentation>
+            Documentation for canonical books
+        </xs:documentation>   
+    </xs:annotation>
+    
+    <xs:complexType name="myBookList">
+        <xs:sequence>
+            <xs:element name="book" type="myBooks" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="myBooks">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" />
+            <xs:element name="edition" type="xs:positiveInteger" minOccurs="0" />
+            <xs:element name="authors" type="authorDef" />
+            <xs:element name="publisher" type="publishers" />
+            <xs:element name="pages" type="xs:positiveInteger" minOccurs="0" />
+            <xs:element name="isbn" type="xs:string" />
+            <xs:element name="price" type="xs:decimal" />
+            <xs:element name="currency" type="currencies" />
+            <xs:element name="comments" type="commentsDef" />
+            <!-- a number of elements to form the sequence -->
+        </xs:sequence>
+        <xs:attribute name="ref" type="xs:string" />
+        <xs:attribute name="mycanon" type="xs:string" />
+        <!-- a number of attributes -->
+    </xs:complexType>
+    
+    <xs:complexType name="authorDef">
+        <xs:sequence>
+            <xs:element name="author" type="authorDet" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="authorDet">
+        <xs:sequence>
+            <xs:element name="firstname" type="xs:string" />
+            <xs:element name="lastname" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="publishers">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="year" type="xs:positiveInteger" />
+            <xs:element name="place" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="commentsDef">
+        <xs:sequence>
+            <xs:element name="comment" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="currencies">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GBP" />
+            <xs:enumeration value="DKR" />
+            <xs:enumeration value="US$" />
+            <xs:enumeration value="&#8364;" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="booksCanon" type="myBookList" />
+</xs:schema>
