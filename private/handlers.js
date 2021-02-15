@@ -60,8 +60,7 @@ module.exports = {
         console.log(`Handler 'notfound' was called for route ${req.url}`);
         res.end();
     },
-    books(res) {
+    books(req, res) {
         print.printBooks(res);
     }
-
 }

@@ -6,24 +6,24 @@
   "bin": {
     "projectweek7": "server.js"
   },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "http-status-codes": "^2.1.4",
+    "sax": "^1.2.4",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {},
   "scripts": {
-    "pretest": "npm install",
-    "test": "node main"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/langehk/projectweek7.git"
   },
-  "keywords": [],
-  "author": "MNM DEVELOPMENT",
+  "author": "Nadia Skau",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/langehk/projectweek7/issues"
   },
-  "homepage": "https://github.com/langehk/projectweek7#readme",
-  "dependencies": {
-    "fs": "0.0.1-security",
-    "http-status-codes": "^2.1.4",
-    "xml2js": "^0.4.23"
-  }
+  "homepage": "https://github.com/langehk/projectweek7#readme"
 }
