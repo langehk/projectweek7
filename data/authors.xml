@@ -4,23 +4,25 @@
 <authors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="authors.xsd">
     <author>
-        <firstname>Ian</firstname>
-        <lastname>Lloyd</lastname>
+        <name>Ian Lloyd</name>
+        <birthyear>1995</birthyear>
+        <deathyear>2020</deathyear>
+        <birthplace>London</birthplace>
+        <contry>England</contry>
+        <language>en</language>
+        <bio>Han var en god forfatter</bio>
+        
     </author>
+
     <author>
-        <firstname>Rich</firstname>
-        <lastname>Shupe</lastname>
+        <name>John Smith</name>
+        <birthyear>1990</birthyear>
+        <deathyear></deathyear>
+        <birthplace>New York</birthplace>
+        <contry>USA</contry>
+        <language>en</language>
+        <bio>Han er en god forfatter</bio>
+        
     </author>
-    <author>
-        <firstname>Zevan</firstname>
-        <lastname>Rosser</lastname>
-    </author>
-    <author>
-        <firstname>Robin</firstname>
-        <lastname>Nixon</lastname>
-    </author>
-    <author>
-        <firstname>Ben</firstname>
-        <lastname>Forta</lastname>
-    </author>
+    
 </authors>

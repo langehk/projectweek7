@@ -7,8 +7,10 @@ const handlers = require("../private/handlers");               // handlers modul
 const requestHandlers = {                             // application urls here
     GET: {
         "/": handlers.home,
+        "/addBook": handlers.home,
+        "/addAuthor": handlers.home,
         "/book" : handlers.books,
-        "/author" : handlers.author,
+        "/author" : handlers.authors,
         "/notfound": handlers.notfound,
         "js": handlers.js,
         "css": handlers.css,
@@ -16,7 +18,8 @@ const requestHandlers = {                             // application urls here
         "ico": handlers.ico
     },
     POST: {
-        "/contact": handlers.receiveData
+        "/addBook": handlers.receiveData,
+        "/addAuthor": handlers.receiveData
     }
 }
 

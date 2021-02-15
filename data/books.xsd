@@ -64,7 +64,7 @@
     <xs:simpleType name="currencies">
         <xs:restriction base="xs:string">
             <xs:enumeration value="GBP" />
-            <xs:enumeration value="DKR" />
+            <xs:enumeration value="DKK" />
             <xs:enumeration value="US$" />
             <xs:enumeration value="&#8364;" />
         </xs:restriction>

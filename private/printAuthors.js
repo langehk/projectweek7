@@ -1,7 +1,7 @@
 "use strict";
 
 const fs = require("fs");
-const filename = "./data/books.xml";
+const filename = "./data/authors.xml";
 const xml2js = require("xml2js");
 const httpStatus = require("http-status-codes");        // http sc
 
@@ -17,7 +17,7 @@ let html = `<!doctype html>
 <nav>
       <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/author">Author</a></li>
+            <li><a href="/book">Books</a></li>
       </ul>
 </nav>`;
 
@@ -44,11 +44,10 @@ exports.printAuthors = function(res) {
 
                 content = result;    
             });
-
-            for (let i = 0; i < content.authors.length; i++) { //our array with objects
-                console.log("hej");            
-                for(let key in content[i]) { //for each property 
-                    let p =  `<p><b>${key}</b>: ${content[i][key]}</p>`;
+            for (let i = 0; i < content.authors.author.length; i++) { //our array with objects
+                           
+                for(let key in content.authors.author[i]) { //for each property 
+                    let p =  `<p><b>${key}</b>: ${content.authors.author[i][key]}</p>`;
                     html += p; 
                 }
             }

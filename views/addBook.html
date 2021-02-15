@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new book</title>
+</head>
+<body>
+    <form method="post" action="/addBook">
+        <input type="text" name="title" placeholder="Enter title" onfocus="this.value = ''">
+        <input type="text" name="edition" placeholder="Enter edition" onfocus="this.value = ''">
+        <input type="text" name="authorFirstname" placeholder="Enter author firstname" onfocus="this.value = ''">
+        <input type="text" name="authorLastname" placeholder="Enter author lastname" onfocus="this.value = ''">
+        <p>Enter information about publisher</p>
+        <input type="text" name="pubblisherName" placeholder="Enter name" onfocus="this.value = ''">
+        <input type="text" name="publisherYear" placeholder="Enter year" onfocus="this.value = ''">
+        <input type="text" name="publisherPlace" placeholder="Enter placeholder" onfocus="this.value = ''">
+        <input type="number" name="pages" placeholder="Enter number of pages" onfocus="this.value = ''">
+        <input type="number" name="price" placeholder="Enter price" onfocus="this.value = ''">
+        <label for="currency">Choose currency:</label>
+            <select name="currency" id="currency">
+            <option value="GBP">GBP</option>
+            <option value="DKK">DKK</option>
+            <option value="US$">US $</option>
+            <option value="&#8364;">&#8364;</option>
+            </select>
+        <input type="text" name="comment" placeholder="Enter comment" onfocus="this.value = ''">        
+        <input type="submit" value="Add book">
+    </form>
+</body>
+</html>

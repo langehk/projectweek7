@@ -10,8 +10,13 @@
     
     <xs:complexType name="myAuthors">
         <xs:sequence>
-            <xs:element name="firstname" type="xs:string" />
-            <xs:element name="lastname" type="xs:string" />
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="birthyear" type="xs:string" />
+            <xs:element name="deathyear" type="xs:string"  minOccurs="0" maxOccurs="1"/>
+            <xs:element name="birthplace" type="xs:string" />
+            <xs:element name="contry" type="xs:string" />
+            <xs:element name="language" type="xs:string" />
+            <xs:element name="bio" type="xs:string" />
         </xs:sequence>
     </xs:complexType>
 

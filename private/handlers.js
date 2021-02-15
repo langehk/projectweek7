@@ -5,8 +5,8 @@
  */
 const fs = require("fs");                               // file system access
 const httpStatus = require("http-status-codes");        // http sc
-//const lib = require("../private/libWebUtil");           // home grown utilities
-//const experimental = require("../private/myTemplater"); // highly experimental template
+const lib = require("../private/libWebUtil");           // home grown utilities
+const receipt = require("./receipts"); // confirmation on added book
 const print = require("../private/printBooks"); 
 const printAuthors = require("../private/printAuthors"); 
 
@@ -56,7 +56,12 @@ module.exports = {
         let content = "image/x-icon";
         getAndServe(res, path, content);
     },
-
+    xsl(req, res) {
+        let path = "data/" + req.url;
+        let content = "text/xsl; charset=utf-8";
+        console.log("xsl");
+        getAndServe(res, path, content);
+    },
     notfound(req, res) {
         console.log(`Handler 'notfound' was called for route ${req.url}`);
         res.end();
@@ -64,7 +69,15 @@ module.exports = {
     books(req, res) {
         print.printBooks(res);
     },
-    author(req, res) {
+    authors(req, res) {
         printAuthors.printAuthors(res);
+    },
+    receiveData(req, res, data) {
+        let obj = lib.makeWebArrays(req, data);         // home made GET and POST objects
+        res.writeHead(httpStatus.OK, {                  // yes, write relevant header
+            "Content-Type": "text/html; charset=utf-8"
+        });
+        res.write(receipt.receipt(obj));           // home made templating for native node
+        res.end();
     }
 }
