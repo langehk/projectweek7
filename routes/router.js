@@ -8,7 +8,7 @@ const requestHandlers = {                             // application urls here
     GET: {
         "/": handlers.home,
         "/book" : handlers.books,
-        "/author" : handlers.home,
+        "/author" : handlers.author,
         "/notfound": handlers.notfound,
         "js": handlers.js,
         "css": handlers.css,

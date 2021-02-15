@@ -8,6 +8,7 @@ const httpStatus = require("http-status-codes");        // http sc
 //const lib = require("../private/libWebUtil");           // home grown utilities
 //const experimental = require("../private/myTemplater"); // highly experimental template
 const print = require("../private/printBooks"); 
+const printAuthors = require("../private/printAuthors"); 
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
 const getAndServe = async function (res, path, content) {   // asynchronous
@@ -62,5 +63,8 @@ module.exports = {
     },
     books(req, res) {
         print.printBooks(res);
+    },
+    author(req, res) {
+        printAuthors.printAuthors(res);
     }
 }

@@ -49,7 +49,7 @@ exports.printBooks = function(res) {
                 "Content-Type": content
             });
             
-            xml2js.parseString(data, { mergeAttrs: true, explicitArray: false }, (err, result) => {
+            xml2js.parseString(data, { mergeAttrs: true, explicitArray: false }, (err, result) => { //parse xml to json
                 if (err) {
                     throw err;
                 }  
@@ -57,10 +57,9 @@ exports.printBooks = function(res) {
                 content = result;    
             });
 
-            for (let i = 0; i < content.booksCanon.book.length; i++) {
+            for (let i = 0; i < content.booksCanon.book.length; i++) { 
                 
                 let book = content.booksCanon.book[i]; 
-
 
                 let newRow = `<tr><td>${book.title}</td>
                     <td>${book.edition}</td>`;
