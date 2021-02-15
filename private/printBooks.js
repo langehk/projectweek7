@@ -11,22 +11,16 @@ let html = `<!doctype html>
     <meta charset="utf-8"/>
     <title>Contact list</title>
 </head>
-<body> `; 
-
-const printObjects = function(obj) {   
-    for (var key in obj) {
-        if (typeof obj[key] === "object") {
-            let pp = `<p>${key}</p>`;
-            html += pp;
-            printObjects(obj[key]);   
-        } else {
-            let p =  `<p><b>${key}</b>: ${obj[key]}</p>`;
-            html += p;   
-        }
-    }
-}
+<body> 
+<table id="booksTable">
+<tr>
+<th>Title</th>
+<th>Edition</th>
+<th>Authors</th>`; 
 
 exports.printBooks = function(res) {
+
+    let content; 
 
     fs.readFile(filename, (err, data) => { //Read file - get our content
         if (err) {
@@ -43,12 +37,22 @@ exports.printBooks = function(res) {
             xml2js.parseString(data, { mergeAttrs: true, explicitArray: false }, (err, result) => {
                 if (err) {
                     throw err;
-                }
+                }  
 
-                printObjects(result.booksCanon.book);      
-   
+                content = result;    
             });
 
+            for (let i = 0; i < content.booksCanon.book.length; i++) {
+                
+                let author = content.booksCanon.book;
+
+                let newRow = `<tr><td>${content.booksCanon.book[i].title}</td>
+                    <td>${content.booksCanon.book[i].edition}</td>
+                    <td>${content.booksCanon.book[i].authors.author.firstname} ${content.booksCanon.book[i].authors.author.lastname}</td></tr>`;
+                html += newRow; 
+                
+            }
+            
             html += `</body> </html>`; 
             res.write(html);
             res.end(); 
