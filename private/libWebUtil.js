@@ -73,3 +73,62 @@ exports.saveJsonObjectToXml = function(jsonObj, destFile) {
     });
 });
 }
+
+exports.createBook = function(object) {
+
+    
+
+    // read XML file
+    fs.readFile("./data/books.xml", "utf-8", (err, data) => {
+        if (err) {
+            throw err;
+        }
+
+// Bygger book object, som vi har udfyldt i vores FORM. til et JSON object.
+const Book = {
+    ref : object.POST.ref,
+    title : object.POST.title, 
+    edition : object.POST.edition,
+    authors : [{
+        author: {
+            firstname : object.POST.authorFirstname,
+            lastname : object.POST.authorFirstname
+        },
+    }],
+    publisher : [{
+        name : object.POST.publisherName,
+        year : object.POST.publisherYear,
+        place : object.POST.publisherPlace,
+    }],
+    pages : object.POST.pages,
+    price : object.POST.price,
+    currenct : object.POST.currency,
+    comments : [{
+        comment : object.POST.comment
+    }],
+}
+
+
+    // convert XML data to JSON object
+       xml2js.parseString(data, { mergeAttrs: true, explicitArray: false }, (err, result) => {
+        if (err) {
+            throw err;
+        }
+
+        result.booksCanon.book.push(Book);
+        console.log(JSON.stringify(result, null, 4));
+
+
+        // convert SJON objec to XML
+        const builder = new xml2js.Builder();
+        const xml = builder.buildObject(result);
+
+        // write updated XML string to a file
+        fs.writeFile('./data/books.xml', xml, (err) => {
+            if (err) {
+                throw err;
+            }
+        });
+    });
+});
+}

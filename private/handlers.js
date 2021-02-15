@@ -73,10 +73,14 @@ module.exports = {
         printAuthors.printAuthors(res);
     },
     receiveData(req, res, data) {
+
         let obj = lib.makeWebArrays(req, data);         // home made GET and POST objects
         res.writeHead(httpStatus.OK, {                  // yes, write relevant header
             "Content-Type": "text/html; charset=utf-8"
         });
+        console.log("post data:");
+        //console.log(obj.POST);
+        lib.createBook(obj);
         res.write(receipt.receipt(obj));           // home made templating for native node
         res.end();
     }

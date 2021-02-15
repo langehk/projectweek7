@@ -19,6 +19,9 @@ let html = `<!doctype html>
             <li><a href="/">Home</a></li>
             <li><a href="/book">Books</a></li>
       </ul>
+      <ul>
+            <li><a href="/addAuthor">Create Author</a></li>
+      </ul>
 </nav>`;
 
 exports.printAuthors = function(res) {

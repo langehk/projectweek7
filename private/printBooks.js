@@ -19,6 +19,9 @@ let html = `<!doctype html>
             <li><a href="/">Home</a></li>
             <li><a href="/author">Author</a></li>
       </ul>
+      <ul>
+            <li><a href="/addBook">Create Book</a></li>
+      </ul>
 </nav>
 <table id="booksTable" border="1">
     <tr>
