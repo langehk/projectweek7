@@ -14,18 +14,24 @@ let html = `<!doctype html>
 </head>
 <body> 
 <h1>List of books: </h1>
+<nav>
+      <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/author">Author</a></li>
+      </ul>
+</nav>
 <table id="booksTable" border="1">
-<tr>
-<th>Title</th>
-<th>Edition</th>
-<th>Authors</th>
-<th>Publisher</th>
-<th>Pages</th>
-<th>Isbn</th>
-<th>Price</th>
-<th>Currency</th>
-<th>Comments</th>
-</tr>`;
+    <tr>
+        <th>Title</th>
+        <th>Edition</th>
+        <th>Authors</th>
+        <th>Publisher</th>
+        <th>Pages</th>
+        <th>Isbn</th>
+        <th>Price</th>
+        <th>Currency</th>
+        <th>Comments</th>
+    </tr>`;
 
 exports.printBooks = function(res) {
 
