@@ -98,11 +98,10 @@ exports.printBooks = function(res) {
                     newRow += (`<td>${book.comments.comment[y]}</td>`);
                 }
                 
-                                
+                newRow += (`<td><input type="button" id="${book.isbn}" value="Delete Row" onclick=""></td>`);
 
                 newRow += '</tr>';
                 html += newRow; 
-                
             }
                    
             html += `</body> </html>`; 

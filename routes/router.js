@@ -8,6 +8,10 @@ const requestHandlers = {                             // application urls here
     GET: {
         "/": handlers.home,
         "/addBook": handlers.home,
+        "/deleteBook" : handlers.home,
+        "/deleteAuthor" : handlers.home,
+        "/updateBook" : handlers.home,
+        "/updateAuthor" : handlers.home,
         "/addAuthor": handlers.home,
         "/book" : handlers.books,
         "/author" : handlers.authors,
@@ -19,7 +23,11 @@ const requestHandlers = {                             // application urls here
     },
     POST: {
         "/addBook": handlers.POSTBook,
+        "/deleteBook" : handlers.deleteBook,
+        "/updateBook" : handlers.updateBook,
         "/addAuthor": handlers.POSTAuthor,
+        "/deleteAuthor": handlers.deleteAuthor,
+        "/updateAuthor" : handlers.updateAuthor
     }
 }
 

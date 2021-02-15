@@ -20,4 +20,13 @@
     <language>en</language>
     <bio>Han er en god forfatter</bio>
   </author>
+  <author>
+    <name>Pia</name>
+    <birthyear>1850</birthyear>
+    <deathyear>1940</deathyear>
+    <birthplace>Esbjerg</birthplace>
+    <country>Denmark</country>
+    <language>DK</language>
+    <bio>123</bio>
+  </author>
 </authors>

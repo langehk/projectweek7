@@ -103,4 +103,27 @@
       <comment>3. sem: Chapters 1-17</comment>
     </comments>
   </book>
+  <book>
+    <ref/>
+    <title>Bog1</title>
+    <edition>2</edition>
+    <authors>
+      <author>
+        <firstname>Lars</firstname>
+        <lastname>Lars</lastname>
+      </author>
+    </authors>
+    <publisher>
+      <name/>
+      <year>2012</year>
+      <place>test</place>
+    </publisher>
+    <pages>233</pages>
+    <isbn>978-063456457542</isbn>
+    <price>122</price>
+    <currenct>DKK</currenct>
+    <comments>
+      <comment>God bog</comment>
+    </comments>
+  </book>
 </booksCanon>
