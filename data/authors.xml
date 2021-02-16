@@ -8,7 +8,7 @@ xsi:noNamespaceSchemaLocation="authors.xsd">
         <birthyear>1995</birthyear>
         <deathyear>2020</deathyear>
         <birthplace>London</birthplace>
-        <contry>England</contry>
+        <country>England</country>
         <language>en</language>
         <bio>Han var en god forfatter</bio>
         
@@ -19,7 +19,7 @@ xsi:noNamespaceSchemaLocation="authors.xsd">
         <birthyear>1990</birthyear>
         <deathyear></deathyear>
         <birthplace>New York</birthplace>
-        <contry>USA</contry>
+        <country>USA</country>
         <language>en</language>
         <bio>Han er en god forfatter</bio>
         
