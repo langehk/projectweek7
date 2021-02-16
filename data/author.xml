@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<authors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="authors.xsd" 
-xsl:noNamespaceSchemaLocation="author.xsl">
+<?xml-stylesheet type="text/xsl" href="author.xsl"?>
+<authors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="authors.xsd">
+
   <author>
     <name>Ian Lloyd</name>
     <birthyear>1995</birthyear>
@@ -20,12 +21,21 @@ xsl:noNamespaceSchemaLocation="author.xsl">
     <bio>Han er en god forfatter</bio>
   </author>
   <author>
-    <name>Per</name>
-    <birthyear/>
+    <name>Nadia Skau</name>
+    <birthyear>1990</birthyear>
+    <deathyear/>
+    <birthplace>Sønderborg</birthplace>
+    <country>Danmark</country>
+    <language>Dansk</language>
+    <bio>Mega awesome</bio>
+  </author>
+  <author>
+    <name>Nadia Skau</name>
+    <birthyear>1990</birthyear>
     <deathyear/>
     <birthplace/>
-    <country/>
-    <language/>
-    <bio/>
+    <country>Danmark</country>
+    <language>Dansk</language>
+    <bio>Mega awesome</bio>
   </author>
 </authors>

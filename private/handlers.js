@@ -87,7 +87,7 @@ module.exports = {
         res.writeHead(httpStatus.OK, { // yes, write relevant header
             "Content-Type": "text/html; charset=utf-8"
         });
-        lib.createBook(obj);
+        CRUD.createBook(obj);
         res.write(receipt.receipt(obj)); // home made templating for native node
         res.end();
     },
@@ -102,7 +102,7 @@ module.exports = {
         res.writeHead(httpStatus.OK, { // yes, write relevant header
             "Content-Type": "text/html; charset=utf-8"
         });
-        lib.createAuthor(obj);
+        CRUD.createAuthor(obj);
         res.write(receipt.receipt(obj)); // home made templating for native node
         res.end();
     },
