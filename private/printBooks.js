@@ -5,41 +5,39 @@ const filename = "./data/books.xml";
 const xml2js = require("xml2js");
 const httpStatus = require("http-status-codes");        // http sc
 
-let p; 
-let html = `<!doctype html> 
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <title>Contact list</title>
-</head>
-<body> 
-<h1>List of books: </h1>
-<nav>
-      <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/author">Author</a></li>
-      </ul>
-      <ul>
-            <li><a href="/addBook">Create Book</a></li>
-            <li><a href="/deleteBook">Delete Book</a></li>
-      </ul>
-</nav>
-<table id="booksTable" border="1">
-    <tr>
-        <th>Title</th>
-        <th>Edition</th>
-        <th>Authors</th>
-        <th>Publisher</th>
-        <th>Pages</th>
-        <th>Isbn</th>
-        <th>Price</th>
-        <th>Currency</th>
-        <th>Comments</th>
-    </tr>`;
-
 exports.printBooks = function(res) {
+    let html = `<!doctype html> 
+    <html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Contact list</title>
+    </head>
+    <body> 
+    <h1>List of books: </h1>
+    <nav>
+        <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/author">Author</a></li>
+        </ul>
+        <ul>
+                <li><a href="/addBook">Create Book</a></li>
+                <li><a href="/deleteBook">Delete Book</a></li>
+        </ul>
+    </nav>
+    <table id="booksTable" border="1">
+        <tr>
+            <th>Title</th>
+            <th>Edition</th>
+            <th>Authors</th>
+            <th>Publisher</th>
+            <th>Pages</th>
+            <th>Isbn</th>
+            <th>Price</th>
+            <th>Currency</th>
+            <th>Comments</th>
+        </tr>`;
 
-    let content; 
+    let content = ""; 
 
     fs.readFile(filename, (err, data) => { //Read file - get our content
         if (err) {
@@ -48,9 +46,9 @@ exports.printBooks = function(res) {
         } 
         else 
         {
-            let content = "text/html; charset=utf-8";
+            let contentHTML = "text/html; charset=utf-8";
             res.writeHead(httpStatus.OK, {          // yes, write header
-                "Content-Type": content
+                "Content-Type": contentHTML
             });
             
             xml2js.parseString(data, { mergeAttrs: true, explicitArray: false }, (err, result) => { //parse xml to json
@@ -61,15 +59,15 @@ exports.printBooks = function(res) {
                 content = result;    
             });
 
-            for (let i = 0; i < content.booksCanon.book.length; i++) { 
+            for (let i = 0; i < content.booksCanon.book.length; i++) { //as many books as we have
                 
                 let book = content.booksCanon.book[i]; 
 
                 let newRow = `<tr><td>${book.title}</td>
-                    <td>${book.edition}</td>`;
+                    <td>${book.edition}</td>`; //building new row
 
                 // Henter author / authors 
-                if (book.authors.author.length > 1){
+                if (book.authors.author.length > 1){ //more than one author
                     newRow += '<td>';
                     for (let y = 0; y < book.authors.author.length; y++) {
                         newRow += (`${book.authors.author[y].firstname} ${book.authors.author[y].lastname} <br>`);
@@ -87,7 +85,7 @@ exports.printBooks = function(res) {
                 newRow += (`<td>${book.price}`);
                 newRow += (`<td>${book.currency}`);
 
-                if(book.comments.comment.length > 1){
+                if(book.comments.comment.length > 1){ //more than one comment
                     newRow += '<td>';
                     for (let y = 0; y < book.comments.comment.length; y++) {
                         newRow += (`${book.comments.comment[y]}`);
@@ -100,13 +98,12 @@ exports.printBooks = function(res) {
                 }
                 
 
-                newRow += '</tr>';
-                html += newRow; 
+                let tabledata = newRow + '</tr>';
+                html += tabledata; 
 
             }
                    
             html += `</table></body> </html>`; 
-   
             res.write(html);
             res.end(); 
         }
