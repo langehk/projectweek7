@@ -10,7 +10,7 @@ exports.printBooks = function(res) {
     <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Contact list</title>
+        <title>Books</title>
     </head>
     <body> 
     <h1>List of books: </h1>
