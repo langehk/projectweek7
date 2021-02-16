@@ -117,7 +117,7 @@ const Book = {
 
 
         // convert SJON objec to XML
-        const builder = new xml2js.Builder();
+        const builder = new xml2js.Builder({allowSurrogateChars:true});
         const xml = builder.buildObject(result);
 
         // write updated XML string to a file
@@ -132,35 +132,36 @@ const Book = {
 
 exports.createAuthor = function(object) {
     // read XML file
-    fs.readFile("./data/authors.xml", "utf-8", (err, data) => {
+    fs.readFile("./data/author.xml", "utf-8", (err, data) => {
         if (err) {
             throw err;
         }
 
-const Author = {
-    name : object.POST.name,
-    birthyear : object.POST.birthyear,
-    deathyear : object.POST.deathyear,
-    birthplace : object.POST.birthplace,
-    country : object.POST.country,
-    language : object.POST.language,
-    bio : object.POST.bio
-}
+    const Author = {
+        name : object.POST.name,
+        birthyear : object.POST.birthyear,
+        deathyear : object.POST.deathyear,
+        birthplace : object.POST.birthplace,
+        country : object.POST.country,
+        language : object.POST.language,
+        bio : object.POST.bio
+    }
 
     // convert XML data to JSON object
-       xml2js.parseString(data, { mergeAttrs: true, explicitArray: false }, (err, result) => {
+       xml2js.parseString(data, (err, result) => {
         if (err) {
             throw err;
         }
+        console.log(result);
         result.authors.author.push(Author);
-        console.log(JSON.stringify(result, null, 4));
+        //console.log(JSON.stringify(result, null, 4));
 
         // convert SJON objec to XML
         const builder = new xml2js.Builder();
         const xml = builder.buildObject(result);
 
         // write updated XML string to a file
-        fs.writeFile('./data/authors.xml', xml, (err) => {
+        fs.writeFile('./data/author.xml', xml, (err) => {
             if (err) {
                 throw err;
             }

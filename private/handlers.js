@@ -9,7 +9,6 @@ const httpStatus = require("http-status-codes"); // http sc
 const lib = require("../private/libWebUtil"); // home grown utilities
 const receipt = require("./receipts"); // confirmation on added book
 const print = require("../private/printBooks");
-const printAuthors = require("../private/printAuthors");
 const CRUD = require("../private/CRUD"); 
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
@@ -74,9 +73,6 @@ module.exports = {
     },
     books(req, res) {
         print.printBooks(res);
-    },
-    authors(req, res) {
-        printAuthors.printAuthors(res);
     },
     receiveData(req, res, data) {
         let obj = lib.makeWebArrays(req, data); // home made GET and POST objects
