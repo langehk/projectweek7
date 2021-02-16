@@ -9,12 +9,8 @@
     <edition>2</edition>
     <authors>
       <author>
-        <firstname>Lars</firstname>
-        <lastname>Jensen</lastname>
-      </author>
-      <author>
-        <firstname>Børge</firstname>
-        <lastname>Andersen</lastname>
+        <firstname>Ian</firstname>
+        <lastname>Lloyd</lastname>
       </author>
     </authors>
     <publisher>
@@ -37,8 +33,12 @@
     <edition>2</edition>
     <authors>
       <author>
-        <firstname>Niels</firstname>
-        <lastname>Pedersen</lastname>
+        <firstname>Rich</firstname>
+        <lastname>Shupe</lastname>
+      </author>
+      <author>
+        <firstname>Zevan</firstname>
+        <lastname>Rosser</lastname>
       </author>
     </authors>
     <publisher>
@@ -52,78 +52,6 @@
     <currency>US$</currency>
     <comments>
       <comment>1. sem: Chapters 1-7</comment>
-    </comments>
-  </book>
-  <book>
-    <ref>Nix09</ref>
-    <mycanon>mdu</mycanon>
-    <title>Learning PHP, MySQL, and JavaScript</title>
-    <edition>2</edition>
-    <authors>
-      <author>
-        <firstname>John</firstname>
-        <lastname>Smith</lastname>
-      </author>
-    </authors>
-    <publisher>
-      <name>O'Reilly</name>
-      <year>2009</year>
-      <place>Sebastopol, CA, USA</place>
-    </publisher>
-    <pages>528</pages>
-    <isbn>978-0596157135</isbn>
-    <price>23.99</price>
-    <currency>US$</currency>
-    <comments>
-      <comment>2. sem: Chapters 1-7, 11, 14-17</comment>
-      <comment>3. sem: Chapters 8-10</comment>
-    </comments>
-  </book>
-  <book>
-    <ref>For04</ref>
-    <mycanon>mdu</mycanon>
-    <title>SQL in 10 Minutes</title>
-    <edition>3</edition>
-    <authors>
-      <author>
-        <firstname>Alex</firstname>
-        <lastname>Hansen</lastname>
-      </author>
-    </authors>
-    <publisher>
-      <name>Sams Publishing</name>
-      <year>2004</year>
-      <place>Indianapolis, IN, USA</place>
-    </publisher>
-    <pages>256</pages>
-    <isbn>978-0672325670</isbn>
-    <price>14.97</price>
-    <currency>€</currency>
-    <comments>
-      <comment>3. sem: Chapters 1-17</comment>
-    </comments>
-  </book>
-  <book>
-    <ref/>
-    <title>Bog1</title>
-    <edition>2</edition>
-    <authors>
-      <author>
-        <firstname>Lars</firstname>
-        <lastname>Lars</lastname>
-      </author>
-    </authors>
-    <publisher>
-      <name/>
-      <year>2012</year>
-      <place>test</place>
-    </publisher>
-    <pages>233</pages>
-    <isbn>978-063456457542</isbn>
-    <price>122</price>
-    <currenct>DKK</currenct>
-    <comments>
-      <comment>God bog</comment>
     </comments>
   </book>
 </booksCanon>

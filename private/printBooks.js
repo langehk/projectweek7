@@ -102,9 +102,11 @@ exports.printBooks = function(res) {
 
                 newRow += '</tr>';
                 html += newRow; 
+
             }
                    
-            html += `</body> </html>`; 
+            html += `</table></body> </html>`; 
+   
             res.write(html);
             res.end(); 
         }
