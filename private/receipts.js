@@ -90,7 +90,6 @@ exports.updateBookObj = function (obj) {
     
     var myKey = obj.POST.isbn; // Key vi søger efter....
     let filteredObj;
-    var jsonObject;
     let html = `<!doctype html>
     <html>
         <head>
@@ -98,16 +97,12 @@ exports.updateBookObj = function (obj) {
             <title>Sucess</title>
         </head>
         <body>`;
-    
-
    
     fs.readFile("./data/books.xml", "utf-8", (err, data) => {
         if (err) {
             throw err;
         }
 
-        
-        
         // convert XML data to JSON object
         xml2js.parseString(data, { mergeAttrs: true,explicitArray: false }, (err, result) => {
             if (err) {
