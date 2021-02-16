@@ -6,7 +6,10 @@ const xml2js = require("xml2js");
 const httpStatus = require("http-status-codes");        // http sc
 
 let p; 
-let html = `<!doctype html> 
+
+
+exports.printAuthors = function(res) {
+    let html = `<!doctype html> 
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -24,8 +27,6 @@ let html = `<!doctype html>
       </ul>
 </nav>`;
 
-exports.printAuthors = function(res) {
-
     let content; 
 
     fs.readFile(filename, (err, data) => { //Read file - get our content
@@ -35,9 +36,9 @@ exports.printAuthors = function(res) {
         } 
         else 
         {
-            let content = "text/html; charset=utf-8";
+            let contentHTML = "text/html; charset=utf-8";
             res.writeHead(httpStatus.OK, {          // yes, write header
-                "Content-Type": content
+                "Content-Type": contentHTML
             });
             
             xml2js.parseString(data, { mergeAttrs: true, explicitArray: false }, (err, result) => { //parse xml to json
