@@ -5,8 +5,6 @@ const filename = "./data/authors.xml";
 const xml2js = require("xml2js");
 const httpStatus = require("http-status-codes");        // http sc
 
-let p; 
-
 
 exports.printAuthors = function(res) {
     let html = `<!doctype html> 
@@ -35,7 +33,8 @@ exports.printAuthors = function(res) {
             
         } 
         else 
-        {
+        {   
+            
             let contentHTML = "text/html; charset=utf-8";
             res.writeHead(httpStatus.OK, {          // yes, write header
                 "Content-Type": contentHTML
