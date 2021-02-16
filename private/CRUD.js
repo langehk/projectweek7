@@ -154,3 +154,76 @@ exports.createAuthor = function (object) {
         });
     });
 }
+
+
+exports.updateBook = function(object){
+   
+    var lookupKey = object.POST.isbn;
+
+    fs.readFile("./data/books.xml", "utf-8", (err, data) => {
+        if (err) {
+            throw err;
+        }
+
+    const Book = {
+        ref: object.POST.ref,
+        title: object.POST.title,
+        edition: object.POST.edition,
+        authors: [{
+            author: {
+                firstname: object.POST.authorFirstname,
+                lastname: object.POST.authorFirstname
+            },
+        }],
+        publisher: [{
+            name: object.POST.publisherName,
+            year: object.POST.publisherYear,
+            place: object.POST.publisherPlace,
+        }],
+        pages: object.POST.pages,
+        isbn: object.POST.isbn,
+        price: object.POST.price,
+        currenct: object.POST.currency,
+        comments: [{
+            comment: object.POST.comment
+        }],
+    }
+        // convert XML data to JSON object
+        xml2js.parseString(data, { mergeAttrs: true,explicitArray: false }, (err, result) => {
+            if (err) {
+                throw err;
+            }
+
+            // Vi starter på index -1.. Hvorefter vi finder item og index, i vores json object.
+            // Så ser vi, om vores isbn er lig med vores ID, som er indtastet.
+            // Er dette tilfældet, returnerer vi i, som er index på json object.
+            // Dette bruges til at slette med....
+            var index = -1;
+            var filteredObj = result.booksCanon.book.find(function (item, i) {
+                if (item.isbn === lookupKey) {
+                    index = i;
+                    return i;
+                }
+            });
+
+            console.log(filteredObj); // Her har vi det object der er blevet fundet, ud fra vores ID.
+
+            var bookToUpdate = result.booksCanon.book[index];
+            result.booksCanon.book.splice(index, 1); // Her sletter vi alt der er i object index. (Som allerede eksisterer)
+            result.booksCanon.book.push(Book); // Her pusher vi det nye objekt ind i vores XML fil..
+            
+            // convert JSON objec to XML
+            const builder = new xml2js.Builder();
+            const xml = builder.buildObject(result);
+
+            // write updated XML string to a file
+            fs.writeFile('./data/books.xml', xml, (err) => {
+                if (err) {
+                    throw err;
+                }
+            });
+            return bookToUpdate;
+        });
+    });
+}
+

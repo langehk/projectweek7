@@ -54,3 +54,32 @@ exports.deleteReceipt = function (obj) {
     </html>`;
     return html;
 }
+
+exports.updateReceipt = function (obj) {
+
+    let html = `<!doctype html>
+    <html>
+        <head>
+            <meta charset="utf-8"/>
+            <title>Sucess</title>
+        </head>
+        <body>
+        <h3>Du har opdateret:</h3>`;
+
+    function printValues(obj) {
+        for (var key in obj) {
+            if (typeof obj[key] === "object") {
+                printValues(obj[key]);
+            } else {
+                let p = `<p>${[key]}: ${obj[key]}</p>`;
+                html += p;
+            }
+        }
+    }
+
+    printValues(obj);
+
+    html += `</body>
+    </html>`;
+    return html;
+}

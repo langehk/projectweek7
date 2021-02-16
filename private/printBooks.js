@@ -22,6 +22,7 @@ exports.printBooks = function(res) {
         <ul>
                 <li><a href="/addBook">Create Book</a></li>
                 <li><a href="/deleteBook">Delete Book</a></li>
+                <li><a href="/updateBook">Update Book</a></li>
         </ul>
     </nav>
     <table id="booksTable" border="1">

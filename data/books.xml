@@ -54,4 +54,50 @@
       <comment>1. sem: Chapters 1-7</comment>
     </comments>
   </book>
+  <book>
+    <ref/>
+    <title>wwwww</title>
+    <edition>3333</edition>
+    <authors>
+      <author>
+        <firstname>wwww</firstname>
+        <lastname>wwww</lastname>
+      </author>
+    </authors>
+    <publisher>
+      <name/>
+      <year>1111222</year>
+      <place>wwww</place>
+    </publisher>
+    <pages>2222</pages>
+    <isbn>44443333555555</isbn>
+    <price>2222</price>
+    <currenct>GBP</currenct>
+    <comments>
+      <comment>wwwww</comment>
+    </comments>
+  </book>
+  <book>
+    <ref/>
+    <title>rrrrrr</title>
+    <edition/>
+    <authors>
+      <author>
+        <firstname/>
+        <lastname/>
+      </author>
+    </authors>
+    <publisher>
+      <name/>
+      <year/>
+      <place/>
+    </publisher>
+    <pages/>
+    <isbn>777777777777777777</isbn>
+    <price/>
+    <currenct>GBP</currenct>
+    <comments>
+      <comment>rrrrrrr</comment>
+    </comments>
+  </book>
 </booksCanon>
