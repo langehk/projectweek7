@@ -35,8 +35,6 @@ exports.printAuthors = function (res) {
             throw err;
 
         } else {
-            var xsl = fs.readFileSync(path.resolve(__dirname, '../data/authors.xsl'), 'utf-8');
-            data = xsltProcessor.xsltProcess(xsltProcessor.xmlParse(data), xsltProcessor.xmlParse(xsl));
 
             let contentHTML = "text/html; charset=utf-8";
             res.writeHead(httpStatus.OK, { // yes, write header
