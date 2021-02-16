@@ -58,10 +58,14 @@ module.exports = {
         let content = "image/x-icon";
         getAndServe(res, path, content);
     },
+    xml(req, res) {
+        let path = "data" + req.url + ".xml";
+        let content = "text/xml; charset=utf-8";
+        getAndServe(res, path, content);
+    },
     xsl(req, res) {
-        let path = "data/" + req.url;
+        let path = "data" + req.url;
         let content = "text/xsl; charset=utf-8";
-        console.log("xsl");
         getAndServe(res, path, content);
     },
     notfound(req, res) {

@@ -14,12 +14,13 @@ const requestHandlers = {                             // application urls here
         "/updateAuthor" : handlers.home,
         "/addAuthor": handlers.home,
         "/book" : handlers.books,
-        "/author" : handlers.authors,
+        "/author" : handlers.xml,
         "/notfound": handlers.notfound,
         "js": handlers.js,
         "css": handlers.css,
         "png": handlers.png,
-        "ico": handlers.ico
+        "ico": handlers.ico,
+        "xsl": handlers.xsl
     },
     POST: {
         "/addBook": handlers.POSTBook,

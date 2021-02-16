@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 
-<?xml-stylesheet type="text/xsl" href="authors.xsl"?>
+<?xml-stylesheet type="text/xsl" href="author.xsl"?>
 <authors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="authors.xsd">
     <author>
