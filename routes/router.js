@@ -26,6 +26,7 @@ const requestHandlers = {                             // application urls here
         "/addBook": handlers.POSTBook,
         "/deleteBook" : handlers.deleteBook,
         "/updateBook" : handlers.updateBook,
+        "/searchForBook" : handlers.searchForBook,
         "/addAuthor": handlers.POSTAuthor,
         "/deleteAuthor": handlers.deleteAuthor,
         "/updateAuthor" : handlers.updateAuthor

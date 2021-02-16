@@ -193,7 +193,7 @@ exports.updateBook = function(object){
             if (err) {
                 throw err;
             }
-
+            
             // Vi starter på index -1.. Hvorefter vi finder item og index, i vores json object.
             // Så ser vi, om vores isbn er lig med vores ID, som er indtastet.
             // Er dette tilfældet, returnerer vi i, som er index på json object.

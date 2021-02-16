@@ -77,27 +77,4 @@
       <comment>wwwww</comment>
     </comments>
   </book>
-  <book>
-    <ref/>
-    <title>rrrrrr</title>
-    <edition/>
-    <authors>
-      <author>
-        <firstname/>
-        <lastname/>
-      </author>
-    </authors>
-    <publisher>
-      <name/>
-      <year/>
-      <place/>
-    </publisher>
-    <pages/>
-    <isbn>777777777777777777</isbn>
-    <price/>
-    <currenct>GBP</currenct>
-    <comments>
-      <comment>rrrrrrr</comment>
-    </comments>
-  </book>
 </booksCanon>

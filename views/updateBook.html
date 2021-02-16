@@ -7,10 +7,19 @@
         <title>Update book</title>
     </head>
     <body>
-        <h2>Update book</h2>
-            <form method="POST" action="/updateBook">
+        
+        <form method="POST" action="/searchForBook">
             <h3>Enter ISBN Number first:</h3>
             <input type="text" name="isbn" placeholder="Enter isbn" onfocus="this.value = ''">
+            <input type="submit" name="searchButton">
+        </form>
+
+        <h2>Update book</h2>
+            <form method="POST" action="/updateBook">
+                
+            <h3>Enter ISBN Number first:</h3>
+            <input type="text" name="isbn" placeholder="Enter isbn" onfocus="this.value = ''" required>
+            <input type="submit" name="searchButton" value="Search">
             <h3>Book information</h3>
             <input type="text" name="title" placeholder="Enter title" onfocus="this.value = ''">
             <input type="text" name="edition" placeholder="Enter edition" onfocus="this.value = ''">
@@ -30,8 +39,8 @@
                 <option value="US$">US $</option>
                 <option value="&#8364;">&#8364;</option>
                 </select>
-            <input type="text" name="comment" placeholder="Enter comment" onfocus="this.value = ''">        
-            <input type="submit" value="Update book">
+            <input type="text" name="comment" placeholder="Enter comment" onfocus="this.value = ''" required>        
+            <input type="submit" name="updateButton" value="Update book">
         </form>
     </body>
 </html>

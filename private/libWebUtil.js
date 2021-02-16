@@ -86,3 +86,28 @@ exports.saveJsonObjectToXml = function (jsonObj, destFile) {
     });
 }
 
+
+exports.findBookObjectByIsbn = function (lookupKey) {
+    
+    fs.readFile("./data/books.xml", "utf-8", (err, data) => {
+        if (err) {
+            throw err;
+        }
+
+        // convert XML data to JSON object
+        xml2js.parseString(data, { mergeAttrs: true,explicitArray: false }, (err, result) => {
+            if (err) {
+                throw err;
+            }
+    
+        var index = -1;
+        var filteredObj = result.booksCanon.book.find(function (item, i) {
+            if (item.isbn === lookupKey) {
+                index = i;
+                return i;
+            }
+        });
+        return filteredObj;
+        });
+    });
+}
