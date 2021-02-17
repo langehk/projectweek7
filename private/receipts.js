@@ -86,23 +86,23 @@ exports.updateReceipt = function (obj) {
 
 
 
-exports.updateBookObj = function (obj) {
+exports.updateBookObj = async function (obj) {
     
     var myKey = obj.POST.isbn; // Key vi søger efter....
-    let filteredObj;
-    let html = `<!doctype html>
-    <html>
-        <head>
-            <meta charset="utf-8"/>
-            <title>Sucess</title>
-        </head>
-        <body>`;
+   let html = '';
    
     fs.readFile("./data/books.xml", "utf-8", (err, data) => {
         if (err) {
             throw err;
         }
-
+        let filteredObj;
+        html = `<!doctype html>
+        <html>
+            <head>
+                <meta charset="utf-8"/>
+                <title>Sucess</title>
+            </head>
+            <body>`;
         // convert XML data to JSON object
         xml2js.parseString(data, { mergeAttrs: true,explicitArray: false }, (err, result) => {
             if (err) {
@@ -113,7 +113,7 @@ exports.updateBookObj = function (obj) {
         filteredObj = result.booksCanon.book.find(function (item, i) {
             if (item.isbn === myKey) {
                 index = i;
-                return i;
+                //return i;
             }
         });
     });
@@ -122,7 +122,7 @@ exports.updateBookObj = function (obj) {
     console.log(filteredObj); // Her får vi hentet OBJEKTET, SOM DET SKAL!
                                 // MEN ! - Nede i HTML er den undefined.
                                 // DETTE HAR GARANTERET, NOGET MED ASYNC AT GØRE?
-});
+
 
 html += `<form method="POST" action="/updateBook">
                 
@@ -153,6 +153,7 @@ html += `<form method="POST" action="/updateBook">
         </form>`;
     
     html += `</body></html>`;
-    
+});
     return html;
+
 }

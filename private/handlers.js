@@ -9,7 +9,9 @@ const httpStatus = require("http-status-codes"); // http sc
 const lib = require("../private/libWebUtil"); // home grown utilities
 const receipt = require("./receipts"); // confirmation on added book
 const print = require("../private/printBooks");
-const CRUD = require("../private/CRUD"); 
+const CRUD = require("../private/CRUD");
+const mod =  require("../private/jsonBooks");
+const tmpl =  require("./myTemplater");
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
 const getAndServe = async function (res, path, content) { // asynchronous
@@ -105,11 +107,26 @@ module.exports = {
     },
     searchForBook(req, res, data){
         let obj = lib.makeWebArrays(req, data);
+        mod.readBooks(obj)
+        .then( function (contacts) {
+            res.writeHead(httpStatus.OK, {                  // yes, write relevant header
+                "Content-Type": "text/html; charset=utf-8"
+            });
+            
+            res.write(tmpl.htmltop(mod.readBooks(obj)));                                   // home made templating for native node
+            res.end();
+        })
+        .catch( function (err) {
+            console.log(err)
+        })
+
+
+        /*let obj = lib.makeWebArrays(req, data);
         res.writeHead(httpStatus.OK, { // yes, write relevant header
             "Content-Type": "text/html; charset=utf-8"
         });
         res.write(receipt.updateBookObj(obj)); 
-        res.end();
+        res.end();*/
     },
     POSTAuthor(req, res, data) {
         let obj = lib.makeWebArrays(req, data);
