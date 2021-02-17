@@ -1,8 +1,8 @@
-const fs = require("fs");
+const fs = require("fs").promises;
 const querystring = require("querystring"); // parsing and formatting URL query strings
 const lib = require("./libWebUtil");
 const xml2js = require('xml2js');
-const PATH = __dirname + './data/books.xml';
+const PATH = './data/books.xml';
 
 
 
@@ -12,9 +12,9 @@ module.exports = {
         let filteredObj;
 try {
     let data = await fs.readFile(PATH);
-   
+    
         // convert XML data to JSON object
-        xml2js.parseString(data, { mergeAttrs: true,explicitArray: false }, (err, result) => {
+        xml2js.parseString(data, { mergeAttrs: true, explicitArray: false }, (err, result) => {
             if (err) {
                 throw err;
             }
@@ -33,6 +33,7 @@ try {
         console.log("FEJL");
 
     }
+    
 return filteredObj;
 
 }};

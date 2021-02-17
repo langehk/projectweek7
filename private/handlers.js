@@ -113,7 +113,7 @@ module.exports = {
                 "Content-Type": "text/html; charset=utf-8"
             });
             
-            res.write(tmpl.htmltop(mod.readBooks(obj)));                                   // home made templating for native node
+            res.write(tmpl.htmltop(contacts));                                   // home made templating for native node
             res.end();
         })
         .catch( function (err) {

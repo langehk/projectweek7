@@ -27,29 +27,24 @@
     </comments>
   </book>
   <book>
-    <ref>Shu08</ref>
-    <mycanon>mdu</mycanon>
+    <ref/>
     <title>Learning ActionScript 3.0</title>
     <edition>2</edition>
     <authors>
       <author>
         <firstname>Rich</firstname>
-        <lastname>Shupe</lastname>
-      </author>
-      <author>
-        <firstname>Zevan</firstname>
-        <lastname>Rosser</lastname>
+        <lastname>Rich</lastname>
       </author>
     </authors>
     <publisher>
-      <name>O'Reilly</name>
+      <name/>
       <year>2008</year>
       <place>Sebastopol, CA, USA</place>
     </publisher>
-    <pages>384</pages>
+    <pages>777</pages>
     <isbn>978-0596527877</isbn>
     <price>8.73</price>
-    <currency>US$</currency>
+    <currenct>GBP</currenct>
     <comments>
       <comment>1. sem: Chapters 1-7</comment>
     </comments>
