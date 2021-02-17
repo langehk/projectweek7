@@ -39,7 +39,7 @@ exports.convertXmlToJson = function (file) {
             throw err;
         }
         xml2js.parseString(data, {
-            mergeAttrs: true,
+            mergeAttrs: false,
             explicitArray: false
         }, (err, result) => {
             if (err) {
@@ -64,7 +64,7 @@ exports.saveJsonObjectToXml = function (jsonObj, destFile) {
 
         // convert XML data to JSON object
         xml2js.parseString(data, {
-            mergeAttrs: true,
+            mergeAttrs: false,
             explicitArray: false
         }, (err, result) => {
             if (err) {

@@ -11,7 +11,7 @@ exports.deleteBook = function (req, res, data) {
             throw err;
         }
         xml2js.parseString(data, {
-            mergeAttrs: true,
+            mergeAttrs: false,
             explicitArray: false
         }, (err, result) => {
             if (err) {
@@ -88,7 +88,7 @@ exports.createBook = function (object) {
 
         // convert XML data to JSON object
         xml2js.parseString(data, {
-            mergeAttrs: true,
+            mergeAttrs: false,
             explicitArray: false
         }, (err, result) => {
             if (err) {

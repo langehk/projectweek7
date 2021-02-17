@@ -59,7 +59,10 @@ exports.printBooks = function(res) {
 
                 content = result;    
             });
-
+            console.log(content);
+            let sorting = content.booksCanon.book; 
+            sorting.sort();
+            console.log(sorting);
             for (let i = 0; i < content.booksCanon.book.length; i++) { //as many books as we have
                 
                 let book = content.booksCanon.book[i]; 
@@ -86,7 +89,11 @@ exports.printBooks = function(res) {
                 newRow += (`<td>${book.price}`);
                 newRow += (`<td>${book.currency}`);
 
-                if(book.comments.comment.length > 1){ //more than one comment
+                
+                if(book.comments.comment == undefined) { //no comments
+                    newRow += '<td> </td>';
+                }
+                else if(book.comments.comment.length > 1){ //more than one comment
                     newRow += '<td>';
                     for (let y = 0; y < book.comments.comment.length; y++) {
                         newRow += (`${book.comments.comment[y]}`);
@@ -94,8 +101,9 @@ exports.printBooks = function(res) {
                     }
                     newRow += '</td>';
                 }
+                
                 else {
-                    newRow += (`<td>${book.comments.comment[y]}</td>`);
+                    newRow += (`<td>${book.comments.comment}</td>`);
                 }
                 
 
