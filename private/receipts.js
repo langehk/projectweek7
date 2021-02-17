@@ -35,7 +35,7 @@ exports.deleteReceipt = function (obj) {
             <title>Sucess</title>
         </head>
         <body>
-        <h3>Du har tilføjet:</h3>`;
+        <h3>Du har slettet:</h3>`;
 
     function printValues(obj) {
         for (var key in obj) {
