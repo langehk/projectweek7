@@ -15,6 +15,7 @@ const requestHandlers = {                             // application urls here
         "/addAuthor": handlers.home,
         "/book" : handlers.books,
         "/author" : handlers.xml,
+        "/sortAuthor" : handlers.xml,
         "/notfound": handlers.notfound,
         "js": handlers.js,
         "css": handlers.css,

@@ -22,7 +22,7 @@ xmlns="http://www.w3.org/1999/xhtml"
                     <li><a href="/addAuthor">Create Author</a></li>
             </ul>
             <ul>
-              <li><a href="/sortAuthor">Sort alphabetically</a></li>
+              <li><a href="/author">Sort by birthyear</a></li>
         </ul>
         </nav>
           <table border="1" id="tableAuthor">
@@ -37,7 +37,7 @@ xmlns="http://www.w3.org/1999/xhtml"
           </tr>
 
           <xsl:for-each select="author">
-            <xsl:sort select="birthyear"/>
+            <xsl:sort select="name"/>
             <tr>
                 <td><xsl:value-of select="name"/></td>
                 <td><xsl:value-of select="birthyear"/></td>
