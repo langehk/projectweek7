@@ -18,8 +18,8 @@ exports.htmltop = function (filteredObj) {
         <h3>Opdater objektet: </h3>
         <input type="text" name="title" placeholder="Enter title" value="${filteredObj.title}" onfocus="this.value = ''">
         <input type="text" name="edition" placeholder="Enter edition" value="${filteredObj.edition}"  onfocus="this.value = ''">
-        <input type="text" name="authorFirstname" placeholder="Enter author firstname" value="${filteredObj.authors.author[0].firstname}" onfocus="this.value = ''">
-        <input type="text" name="authorLastname" placeholder="Enter author lastname" value="${filteredObj.authors.author[0].lastname}" onfocus="this.value = ''">
+        <input type="text" name="authorFirstname" placeholder="Enter author firstname" value="${filteredObj.authors.author.firstname}" onfocus="this.value = ''">
+        <input type="text" name="authorLastname" placeholder="Enter author lastname" value="${filteredObj.authors.author.lastname}" onfocus="this.value = ''">
         <p>Publisher information:</p>
         <input type="text" name="pubblisherName" placeholder="Enter name" value="${filteredObj.publisher.name}"  onfocus="this.value = ''">
         
