@@ -1,8 +1,13 @@
-const fs = require("fs"); // file system access
+const fs = require("fs").promises; // file system access
 const xml2js = require("xml2js");
 const httpStatus = require("http-status-codes"); // http sc
 const receipt = require("./receipts"); // confirmation on added book
-let xmlHead = `<?xml version="1.0" standalone="no"?> `;
+
+let xmlHead = `<?xml version="1.0" standalone="no"?>`; //xml head
+let stylesheetAuthor = `<?xml-stylesheet type="text/xsl" href="author.xsl"?>`; //reference to stylesheet
+let stylesheetSortAuthor = `<?xml-stylesheet type="text/xsl" href="sortAuthor.xsl"?>`; //reference to stylesheet
+let stylesheetBook = `<?xml-stylesheet type="text/xsl" href="books.xsl"?>`; //reference to stylesheet
+
 
 exports.deleteBook = function (req, res, data) {
     var myId = data.slice(5); // Her fjerner vi "isbn=" fra vores string.
@@ -35,7 +40,8 @@ exports.deleteBook = function (req, res, data) {
 
             // convert JSON objec to XML
             const builder = new xml2js.Builder();
-            const xml = builder.buildObject(result);
+            var xml = builder.buildObject(result);
+            xml = `${xmlHead} \n ${stylesheetBook} \n ${xml}`; //adding head and stylesheet
 
             // write updated XML string to a file
             fs.writeFile('./data/books.xml', xml, (err) => {
@@ -96,15 +102,12 @@ exports.createBook = function (object) {
                 throw err;
             }
 
-            result.booksCanon.book.push(Book);
-            console.log(JSON.stringify(result, null, 4));
-
-
-            // convert SJON objec to XML
-            const builder = new xml2js.Builder({
-                allowSurrogateChars: true
-            });
-            const xml = builder.buildObject(result);
+            result.booksCanon.book.push(Book); //Pushing our data
+            
+            // convert JSON objec to XML
+            const builder = new xml2js.Builder({headless: true}); //no head
+            var xml = builder.buildObject(result);
+            xml = `${xmlHead} \n ${stylesheetBook} \n ${xml}`; //adding head and stylesheet
 
             // write updated XML string to a file
             fs.writeFile('./data/books.xml', xml, (err) => {
@@ -138,18 +141,13 @@ exports.createAuthor = function (object) {
             if (err) {
                 throw err;
             }
-            
+
             result.authors.author.push(Author);
-            
-            let stylesheet = `<?xml-stylesheet type="text/xsl" href="author.xsl"?>`;
-            let stylesheet2 = `<?xml-stylesheet type="text/xsl" href="sortAuthor.xsl"?>`;
 
             // convert SJON objec to XML
-            const builder = new xml2js.Builder({headless: true});
+            const builder = new xml2js.Builder();
             var xml = builder.buildObject(result);
-            var xml2 = builder.buildObject(result);
-            xml = xmlHead + stylesheet + xml;
-            xml2 = xmlHead + stylesheet2 + xml2;
+            xml = `${xmlHead} \n ${stylesheetAuthor} \n ${xml}`; //adding head and stylesheet
 
             // write updated XML string to a file
             fs.writeFile('./data/author.xml', xml, (err) => {
@@ -157,16 +155,9 @@ exports.createAuthor = function (object) {
                     throw err;
                 }
             });
-
-            fs.writeFile('./data/sortAuthor.xml', xml, (err) => {
-                if (err) {
-                    throw err;
-                }
-            });
         });
     });
 }
-
 
 exports.updateBook = function(object){
    
@@ -211,14 +202,12 @@ exports.updateBook = function(object){
             // Er dette tilfældet, returnerer vi i, som er index på json object.
             // Dette bruges til at slette med....
             var index = -1;
-            var filteredObj = result.booksCanon.book.find(function (item, i) {
+            result.booksCanon.book.find(function (item, i) {
                 if (item.isbn === lookupKey) {
                     index = i;
                     return i;
                 }
             });
-
-            console.log(filteredObj); // Her har vi det object der er blevet fundet, ud fra vores ID.
 
             var bookToUpdate = result.booksCanon.book[index];
             result.booksCanon.book.splice(index, 1); // Her sletter vi alt der er i object index. (Som allerede eksisterer)
@@ -226,7 +215,8 @@ exports.updateBook = function(object){
             
             // convert JSON objec to XML
             const builder = new xml2js.Builder();
-            const xml = builder.buildObject(result);
+            var xml = builder.buildObject(result);
+            xml = `${xmlHead} \n ${stylesheetBook} \n ${xml}`; //adding head and stylesheet
 
             // write updated XML string to a file
             fs.writeFile('./data/books.xml', xml, (err) => {

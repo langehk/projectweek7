@@ -32,6 +32,8 @@ exports.makeWebArrays = function (req, data) {
 /* Skal kunne tage i mod en xml fil, og lave om til JSON
  * Kan vi bruge til at indlæse data, udelukkende.
  */
+
+ //IKKE I BRUG
 exports.convertXmlToJson = function (file) {
 
     fs.readFile(file, "utf-8", (err, data) => {
@@ -54,6 +56,8 @@ exports.convertXmlToJson = function (file) {
 /*  Skal kunne tage i mod et JSON object, og gemme til en eksisterende XML fil
  *   Kan vi bruge til at gemme med....
  */
+
+ //IKKE I BRUG
 exports.saveJsonObjectToXml = function (jsonObj, destFile) {
 
     // read XML file

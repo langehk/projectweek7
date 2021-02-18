@@ -119,14 +119,6 @@ module.exports = {
         .catch( function (err) {
             console.log(err)
         })
-
-
-        /*let obj = lib.makeWebArrays(req, data);
-        res.writeHead(httpStatus.OK, { // yes, write relevant header
-            "Content-Type": "text/html; charset=utf-8"
-        });
-        res.write(receipt.updateBookObj(obj)); 
-        res.end();*/
     },
     POSTAuthor(req, res, data) {
         let obj = lib.makeWebArrays(req, data);
@@ -136,12 +128,5 @@ module.exports = {
         CRUD.createAuthor(obj);
         res.write(receipt.receipt(obj)); // home made templating for native node
         res.end();
-    },
-    deleteAuthor(req, res, data) {
-
-    },
-    updateAuthor(req, res, data) {
-
     }
-
 }
