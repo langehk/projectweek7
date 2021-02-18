@@ -14,21 +14,21 @@ body{
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#bookContainer, #updateBookContainer {
+#bookContainer, #searchBookContainer, #updateBookContainer {
   display: flex;
 }
 
-#updateBookContainer{
+#searchBookContainer, #updateBookContainer{
   flex-direction: column;
 }
 
-#bookForm, .updateBookForm {
+#bookForm, #searchBookForm, #updateBookForm {
   margin: auto;
   display: flex;
   flex-direction: column;
   width: 10%
 }
 
-#bookForm input, .updateBookForm input{
+#bookForm input, #searchBookForm input, #updateBookForm input{
   margin-top: 10px;
 }

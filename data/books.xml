@@ -1,14 +1,17 @@
-<?xml version="1.0" standalone="no"?>
-<booksCanon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="books.xsd">
-  <book ref="Llo08" mycanon="mdu,all">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<booksCanon>
+  <xmlns:xsi>http://www.w3.org/2001/XMLSchema-instance</xmlns:xsi>
+  <xsi:noNamespaceSchemaLocation>books.xsd</xsi:noNamespaceSchemaLocation>
+  <book>
+    <ref>Llo08</ref>
+    <mycanon>mdu,all</mycanon>
     <title>ææøæ det sidste alfa</title>
     <edition>2</edition>
     <authors>
       <author>
         <firstname>Ian</firstname>
         <lastname>Lloyd</lastname>
-        </author>
+      </author>
     </authors>
     <publisher>
       <name>SitePoint</name>
@@ -23,8 +26,9 @@
       <comment>1. sem: Chapters 1-7</comment>
     </comments>
   </book>
-  
-  <book ref="Shu08" mycanon="mdu">
+  <book>
+    <ref>Shu08</ref>
+    <mycanon>mdu</mycanon>
     <title>Learning ActionScript 3.0</title>
     <edition>2</edition>
     <authors>
@@ -50,8 +54,9 @@
       <comment/>
     </comments>
   </book>
-  
-  <book ref="Nix09" mycanon="mdu">
+  <book>
+    <ref>Nix09</ref>
+    <mycanon>mdu</mycanon>
     <title>Learning PHP, MySQL, and JavaScript</title>
     <edition>2</edition>
     <authors>
@@ -74,28 +79,27 @@
       <comment>3. sem: Chapters 8-10</comment>
     </comments>
   </book>
-
-  <book ref="For04" mycanon="mdu">
-    <title>SQL in 10 Minutes</title>
-    <edition>3</edition>
+  <book>
+    <ref/>
+    <title>SQL maaaaan</title>
+    <edition>2</edition>
     <authors>
       <author>
         <firstname>Ben</firstname>
-        <lastname>Forta</lastname>
+        <lastname>Ben</lastname>
       </author>
     </authors>
     <publisher>
-      <name>Sams Publishing</name>
+      <name/>
       <year>2004</year>
       <place>Indianapolis, IN, USA</place>
     </publisher>
     <pages>256</pages>
     <isbn>978-0672325670</isbn>
-    <price>14.97</price>
-    <currency>EU&#8364;</currency>
+    <price>150</price>
+    <currenct>GBP</currenct>
     <comments>
       <comment>3. sem: Chapters 1-17</comment>
     </comments>
   </book>
-  
 </booksCanon>

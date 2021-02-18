@@ -24,7 +24,7 @@
             <xs:element name="publisher" type="publishers" />
             <xs:element name="pages" type="xs:positiveInteger" minOccurs="0" />
             <xs:element name="isbn" type="xs:string" />
-            <xs:element name="price" type="xs:decimal" />
+            <xs:element name="price" type="xs:string" />
             <xs:element name="currency" type="currencies" />
             <xs:element name="comments" type="commentsDef" />
             <!-- a number of elements to form the sequence -->

@@ -86,7 +86,7 @@ exports.updateReceipt = function (obj) {
 
 
 
-exports.updateBookObj = async function (obj) {
+/* exports.updateBookObj = async function (obj) {
     
     var myKey = obj.POST.isbn; // Key vi søger efter....
    let html = '';
@@ -140,7 +140,7 @@ html += `<form method="POST" action="/updateBook">
             <input type="text" name="publisherYear" placeholder="Enter year" value="${filteredObj}" onfocus="this.value = ''">
             <input type="text" name="publisherPlace" placeholder="Enter placeholder" value="${filteredObj}" onfocus="this.value = ''">
             <input type="number" name="pages" placeholder="Enter number of pages" value="${filteredObj}" onfocus="this.value = ''">
-            <input type="number" name="price" placeholder="Enter price" value="${filteredObj}" onfocus="this.value = ''">
+            <input type="text" name="price" placeholder="Enter price" value="${filteredObj}" onfocus="this.value = ''">
             <label for="currency">Choose currency:</label>
                 <select name="currency" id="currency">
                 <option value="GBP">GBP</option>
@@ -156,4 +156,4 @@ html += `<form method="POST" action="/updateBook">
 });
     return html;
 
-}
+} */

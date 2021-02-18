@@ -98,11 +98,10 @@ module.exports = {
     },
     updateBook(req, res, data) {
         let obj = lib.makeWebArrays(req, data);
-        
         res.writeHead(httpStatus.OK, { // yes, write relevant header
             "Content-Type": "text/html; charset=utf-8"
         });
-        res.write(receipt.updateReceipt(CRUD.updateBook(obj))); 
+        res.write(receipt.updateReceipt(obj)); 
         res.end();
     },
     searchForBook(req, res, data){

@@ -218,7 +218,7 @@ exports.updateBook = function(object){
                 }
             });
 
-            console.log(filteredObj); // Her har vi det object der er blevet fundet, ud fra vores ID.
+            //console.log(filteredObj); // Her har vi det object der er blevet fundet, ud fra vores ID.
 
             var bookToUpdate = result.booksCanon.book[index];
             result.booksCanon.book.splice(index, 1); // Her sletter vi alt der er i object index. (Som allerede eksisterer)
@@ -234,6 +234,7 @@ exports.updateBook = function(object){
                     throw err;
                 }
             });
+            console.log(bookToUpdate);
             return bookToUpdate;
         });
     });
