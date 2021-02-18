@@ -2,7 +2,6 @@ const fs = require("fs"); // file system access
 const xml2js = require("xml2js");
 const httpStatus = require("http-status-codes"); // http sc
 const receipt = require("./receipts"); // confirmation on added book
-let xmlHead = `<?xml version="1.0" standalone="no"?> `;
 
 exports.deleteBook = function (req, res, data) {
     var myId = data.slice(5); // Her fjerner vi "isbn=" fra vores string.
@@ -143,6 +142,7 @@ exports.createAuthor = function (object) {
             
             let stylesheet = `<?xml-stylesheet type="text/xsl" href="author.xsl"?>`;
             let stylesheet2 = `<?xml-stylesheet type="text/xsl" href="sortAuthor.xsl"?>`;
+            let xmlHead = `<?xml version="1.0" standalone="no"?> `;
 
             // convert SJON objec to XML
             const builder = new xml2js.Builder({headless: true});
