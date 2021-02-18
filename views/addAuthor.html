@@ -8,7 +8,8 @@
         <title>Add new author</title>
     </head>
     <body>
-        <form method="post" action="/addAuthor">
+        <div id="authorContainer">
+        <form id="authorForm" method="post" action="/addAuthor">
             <input type="text" name="name" placeholder="Enter name" onfocus="this.value = ''">
             <input type="text" name="birthyear" placeholder="Enter birthyear" onfocus="this.value = ''">
             <input type="text" name="birthplace" placeholder="Enter birthplace" onfocus="this.value = ''">
@@ -18,5 +19,6 @@
             <input type="text" name="bio" placeholder="Enter bio" onfocus="this.value = ''">    
             <input type="submit" value="Add author">
         </form>
+        </div>
     </body>
 </html>

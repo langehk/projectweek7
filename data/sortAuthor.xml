@@ -107,4 +107,13 @@
     <language>Dansk</language>
     <bio>Lærer</bio>
   </author>
+  <author>
+    <name>Morten Due</name>
+    <birthyear>1998</birthyear>
+    <deathyear/>
+    <birthplace>Flensborg</birthplace>
+    <country>Tyskland</country>
+    <language>Tysk</language>
+    <bio>Tysker</bio>
+  </author>
 </authors>
