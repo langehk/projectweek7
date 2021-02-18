@@ -89,7 +89,7 @@ module.exports = {
         res.writeHead(httpStatus.OK, { // yes, write relevant header
             "Content-Type": "text/html; charset=utf-8"
         });
-        CRUD.createBook(obj);
+        CRUD.createBook(obj); //update file with new content
         res.write(receipt.receipt(obj)); // home made templating for native node
         res.end();
     },
@@ -101,6 +101,7 @@ module.exports = {
         res.writeHead(httpStatus.OK, { // yes, write relevant header
             "Content-Type": "text/html; charset=utf-8"
         });
+        CRUD.updateBook(obj); //update file
         res.write(receipt.updateReceipt(obj)); 
         res.end();
     },
