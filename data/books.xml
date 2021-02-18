@@ -79,27 +79,4 @@
       <comment>3. sem: Chapters 8-10</comment>
     </comments>
   </book>
-  <book>
-    <ref/>
-    <title>SQL maaaaan</title>
-    <edition>6</edition>
-    <authors>
-      <author>
-        <firstname>Ben</firstname>
-        <lastname>Ben</lastname>
-      </author>
-    </authors>
-    <publisher>
-      <name/>
-      <year>2004</year>
-      <place>Indianapolis, IN, USA</place>
-    </publisher>
-    <pages>256</pages>
-    <isbn>978-0672325670</isbn>
-    <price>150</price>
-    <currenct>GBP</currenct>
-    <comments>
-      <comment>3. sem: Chapters 1-17</comment>
-    </comments>
-  </book>
 </booksCanon>

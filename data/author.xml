@@ -89,4 +89,22 @@
     <language>Dansk</language>
     <bio>Lærer</bio>
   </author>
+  <author>
+    <name>Nadia Skau</name>
+    <birthyear>1990</birthyear>
+    <deathyear/>
+    <birthplace>Sønderborg</birthplace>
+    <country>Danmark</country>
+    <language>Dansk</language>
+    <bio>Lærer</bio>
+  </author>
+  <author>
+    <name>Nadia Skau</name>
+    <birthyear>1986</birthyear>
+    <deathyear/>
+    <birthplace>Kolding</birthplace>
+    <country>Danmark</country>
+    <language>Dansk</language>
+    <bio>Lærer</bio>
+  </author>
 </authors>

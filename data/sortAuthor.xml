@@ -1,4 +1,4 @@
-<?xml version="1.0" standalone="no"?> <?xml-stylesheet type="text/xsl" href="author.xsl"?><authors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="authors.xsd">
+<?xml version="1.0" standalone="no"?> <?xml-stylesheet type="text/xsl" href="sortAuthor.xsl"?><authors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="authors.xsd">
   <author>
     <name>Ian Lloyd</name>
     <birthyear>1995</birthyear>
@@ -90,12 +90,21 @@
     <bio>Lærer</bio>
   </author>
   <author>
-    <name>Hej</name>
-    <birthyear>sdfsdfsdf</birthyear>
+    <name>Nadia Skau</name>
+    <birthyear>1990</birthyear>
     <deathyear/>
-    <birthplace/>
-    <country/>
-    <language/>
-    <bio/>
+    <birthplace>Sønderborg</birthplace>
+    <country>Danmark</country>
+    <language>Dansk</language>
+    <bio>Lærer</bio>
+  </author>
+  <author>
+    <name>Nadia Skau</name>
+    <birthyear>1986</birthyear>
+    <deathyear/>
+    <birthplace>Kolding</birthplace>
+    <country>Danmark</country>
+    <language>Dansk</language>
+    <bio>Lærer</bio>
   </author>
 </authors>

@@ -158,7 +158,7 @@ exports.createAuthor = function (object) {
                 }
             });
 
-            fs.writeFile('./data/sortAuthor.xml', xml, (err) => {
+            fs.writeFile('./data/sortAuthor.xml', xml2, (err) => {
                 if (err) {
                     throw err;
                 }
