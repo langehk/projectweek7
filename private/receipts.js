@@ -135,7 +135,7 @@ html += `<form method="POST" action="/updateBook">
             <input type="text" name="authorFirstname" placeholder="Enter author firstname" value="${filteredObj}" onfocus="this.value = ''">
             <input type="text" name="authorLastname" placeholder="Enter author lastname" value="${filteredObj}" onfocus="this.value = ''">
             <p>Publisher information:</p>
-            <input type="text" name="pubblisherName" placeholder="Enter name" value="${filteredObj}"  onfocus="this.value = ''">
+            <input type="text" name="publisherName" placeholder="Enter name" value="${filteredObj}"  onfocus="this.value = ''">
             
             <input type="text" name="publisherYear" placeholder="Enter year" value="${filteredObj}" onfocus="this.value = ''">
             <input type="text" name="publisherPlace" placeholder="Enter placeholder" value="${filteredObj}" onfocus="this.value = ''">

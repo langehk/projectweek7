@@ -8,13 +8,14 @@
     <title>Add new book</title>
 </head>
 <body>
-    <form method="post" action="/addBook">
+    <div id="bookContainer">
+    <form id="bookForm" method="post" action="/addBook">
         <input type="text" name="title" placeholder="Enter title" onfocus="this.value = ''" required>
         <input type="text" name="edition" placeholder="Enter edition" onfocus="this.value = ''">
         <input type="text" name="authorFirstname" placeholder="Enter author firstname" onfocus="this.value = ''" required>
         <input type="text" name="authorLastname" placeholder="Enter author lastname" onfocus="this.value = ''">
         <p>Enter information about publisher</p>
-        <input type="text" name="pubblisherName" placeholder="Enter name" onfocus="this.value = ''">
+        <input type="text" name="publisherName" placeholder="Enter name" onfocus="this.value = ''">
         <input type="text" name="isbn" placeholder="Enter isbn" onfocus="this.value = ''" required>
         <input type="text" name="publisherYear" placeholder="Enter year" onfocus="this.value = ''" required>
         <input type="text" name="publisherPlace" placeholder="Enter placeholder" onfocus="this.value = ''">
@@ -30,5 +31,6 @@
         <input type="text" name="comment" placeholder="Enter comment" onfocus="this.value = ''" required>        
         <input type="submit" value="Add book">
     </form>
+    </div>
 </body>
 </html>
