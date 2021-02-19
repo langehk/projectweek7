@@ -68,7 +68,7 @@ exports.createBook = function (object) {
             authors: [{
                 author: {
                     firstname: object.POST.authorFirstname,
-                    lastname: object.POST.authorFirstname
+                    lastname: object.POST.authorLastname
                 },
             }],
             publisher: [{
